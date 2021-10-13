@@ -15,8 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    var width: CGFloat!
-    var height: CGFloat!
+    var screenWidth: CGFloat!
+    var screenHeight: CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,34 +38,41 @@ class ViewController: UIViewController {
         getWidthAndHeight()
         label.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.width.equalTo(width * 0.75)
-            make.top.equalTo(height * 0.15)
+            make.height.equalTo(screenHeight * 0.07)
+            make.width.equalTo(screenWidth * 0.75)
+            make.top.equalTo(screenHeight * 0.15)
         }
         usernameTextField.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.width.equalTo(width * 0.75)
-            make.top.equalTo(self.label).offset(height * 0.3)
+            make.height.equalTo(screenHeight * 0.065)
+            make.width.equalTo(screenWidth * 0.75)
+            make.top.equalTo(self.label).offset(screenHeight * 0.3)
         }
         passwordTextField.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.width.equalTo(width * 0.75)
-            make.top.equalTo(self.usernameTextField).offset(height * 0.1)
+            make.height.equalTo(screenHeight * 0.065)
+            make.width.equalTo(screenWidth * 0.75)
+            make.top.equalTo(self.usernameTextField).offset(screenHeight * 0.1)
         }
         loginButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.width.equalTo(width * 0.75)
-            make.top.equalTo(self.passwordTextField).offset(height * 0.15)
+            make.height.equalTo(screenHeight * 0.07)
+            make.width.equalTo(screenWidth * 0.75)
+            make.top.equalTo(self.passwordTextField).offset(screenHeight * 0.15)
         }
         signupButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.width.equalTo(width * 0.75)
-            make.top.equalTo(self.loginButton).offset(height * 0.1)
+            make.height.equalTo(screenHeight * 0.07)
+            make.width.equalTo(screenWidth * 0.75)
+            make.top.equalTo(self.loginButton).offset(screenHeight * 0.1)
         }
     }
     
     func getWidthAndHeight(){
-        width = UIScreen.main.bounds.width
-        height = UIScreen.main.bounds.height
+        //self.frame.size.width
+        //self.frame.size.height
+        screenWidth = UIScreen.main.bounds.width
+        screenHeight = UIScreen.main.bounds.height
     }
     
     @objc func dismissKeyboard() {

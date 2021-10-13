@@ -331,6 +331,7 @@ PODS:
     - gRPC-Core/Interface (= 1.28.2)
   - gRPC-Core/Interface (1.28.2)
   - GTMSessionFetcher/Core (1.7.0)
+  - Hero (1.6.1)
   - IQKeyboardManagerSwift (6.5.6)
   - leveldb-library (1.22.1)
   - Material (3.1.8):
@@ -354,6 +355,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Storage
   - FirebaseFirestoreSwift
+  - Hero
   - IQKeyboardManagerSwift
   - Material (~> 3.1.0)
   - SnapKit (~> 5.0.0)
@@ -377,6 +379,7 @@ SPEC REPOS:
     - "gRPC-C++"
     - gRPC-Core
     - GTMSessionFetcher
+    - Hero
     - IQKeyboardManagerSwift
     - leveldb-library
     - Material
@@ -403,6 +406,7 @@ SPEC CHECKSUMS:
   "gRPC-C++": 13d8ccef97d5c3c441b7e3c529ef28ebee86fad2
   gRPC-Core: 4afa11bfbedf7cdecd04de535a9e046893404ed5
   GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
+  Hero: 215865ba3ae41dd9bb08cd6c60a645529c6fc94b
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   Material: a2a3f400a3b549d53ef89e56c58c4535b29db387
@@ -411,6 +415,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 00a22d44a2ebb2812e56c4d8aa81296d3ca24ad2
+PODFILE CHECKSUM: 598ac5875634d347b58202ae6cee9418574d3885
 
 COCOAPODS: 1.11.2

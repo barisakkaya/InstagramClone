@@ -7,9 +7,12 @@
 
 import UIKit
 import SnapKit
+import Hero
+import Firebase
+import CoreMedia
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var label: UILabel!
@@ -22,19 +25,46 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setLayout()
         
+        
     }
-
+    
     @IBAction func loginClicked(_ sender: UIButton) {
-        performSegue(withIdentifier: "goToMain", sender: self)
+        if usernameTextField.text != "" && passwordTextField.text != "" {
+            Auth.auth().signIn(withEmail: usernameTextField.text!, password: passwordTextField.text!) { result, error in
+                if let error = error {
+                    self.callAlert(message: error.localizedDescription)
+                } else {
+                    self.performSegue(withIdentifier: "goToMain", sender: self)
+                }
+            }
+        } else {
+            callAlert(message: "Invalid email or password")
+        }
     }
     
     @IBAction func signUpClicked(_ sender: UIButton) {
-        performSegue(withIdentifier: "goToRegister", sender: self)
+        if usernameTextField.text != "" && passwordTextField.text != "" {
+            Auth.auth().createUser(withEmail: usernameTextField.text!, password: passwordTextField.text!) { result, error in
+                if let error = error {
+                    self.callAlert(message: error.localizedDescription)
+                } else {
+                    self.performSegue(withIdentifier: "goToMain", sender: self)
+                }
+            }
+        } else {
+            callAlert(message: "Invalid email or password")
+        }
     }
     
+    
+    
+    
+    
+    
+}
+extension ViewController {
     func setLayout(){
-        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-        self.view.addGestureRecognizer(tap)
+        closeKeyboard()
         getWidthAndHeight()
         label.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -60,6 +90,8 @@ class ViewController: UIViewController {
             make.width.equalTo(screenWidth * 0.75)
             make.top.equalTo(self.passwordTextField).offset(screenHeight * 0.15)
         }
+        //loginButton.hero.id = "LoginButton"
+        
         signupButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.height.equalTo(screenHeight * 0.07)
@@ -74,6 +106,18 @@ class ViewController: UIViewController {
         screenWidth = UIScreen.main.bounds.width
         screenHeight = UIScreen.main.bounds.height
     }
+    
+    func callAlert(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let button = UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil)
+        alert.addAction(button)
+        self.present(alert, animated: true, completion: nil)
+    }
+    func closeKeyboard(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        self.view.addGestureRecognizer(tap)
+    }
+    
     
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.

@@ -15,6 +15,8 @@
 		E455072E2701E62700E93039 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E455072D2701E62700E93039 /* Assets.xcassets */; };
 		E45507312701E62700E93039 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E455072F2701E62700E93039 /* LaunchScreen.storyboard */; };
 		E45507392701E8E800E93039 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E45507382701E8E800E93039 /* GoogleService-Info.plist */; };
+		E4876FF4271808C3006BFE44 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4876FF3271808C3006BFE44 /* PostsViewController.swift */; };
+		E4876FF627180B6B006BFE44 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4876FF527180B6A006BFE44 /* UploadViewController.swift */; };
 		E4DBA70F2703587000B70E99 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DBA70E2703587000B70E99 /* MainViewController.swift */; };
 		E4E9B9A1270321EC00C30419 /* Gluten-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4E9B9A0270321C100C30419 /* Gluten-VariableFont_wght.ttf */; };
 		E4E9B9A327032A4B00C30419 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E9B9A227032A4B00C30419 /* RegisterViewController.swift */; };
@@ -33,6 +35,8 @@
 		E45507302701E62700E93039 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E45507322701E62700E93039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E45507382701E8E800E93039 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E4876FF3271808C3006BFE44 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		E4876FF527180B6A006BFE44 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		E4DBA70E2703587000B70E99 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E4E9B9A0270321C100C30419 /* Gluten-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gluten-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		E4E9B9A227032A4B00C30419 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 				E45507282701E62400E93039 /* ViewController.swift */,
 				E4E9B9A227032A4B00C30419 /* RegisterViewController.swift */,
 				E4DBA70E2703587000B70E99 /* MainViewController.swift */,
+				E4876FF3271808C3006BFE44 /* PostsViewController.swift */,
+				E4876FF527180B6A006BFE44 /* UploadViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -252,6 +258,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4876FF4271808C3006BFE44 /* PostsViewController.swift in Sources */,
+				E4876FF627180B6B006BFE44 /* UploadViewController.swift in Sources */,
 				E45507292701E62400E93039 /* ViewController.swift in Sources */,
 				E45507252701E62400E93039 /* AppDelegate.swift in Sources */,
 				E45507272701E62400E93039 /* SceneDelegate.swift in Sources */,

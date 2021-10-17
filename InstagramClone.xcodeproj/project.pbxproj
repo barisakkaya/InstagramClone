@@ -17,9 +17,9 @@
 		E45507392701E8E800E93039 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E45507382701E8E800E93039 /* GoogleService-Info.plist */; };
 		E4876FF4271808C3006BFE44 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4876FF3271808C3006BFE44 /* PostsViewController.swift */; };
 		E4876FF627180B6B006BFE44 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4876FF527180B6A006BFE44 /* UploadViewController.swift */; };
+		E4876FF827186200006BFE44 /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4876FF727186200006BFE44 /* PostsTableViewCell.swift */; };
 		E4DBA70F2703587000B70E99 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DBA70E2703587000B70E99 /* MainViewController.swift */; };
 		E4E9B9A1270321EC00C30419 /* Gluten-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4E9B9A0270321C100C30419 /* Gluten-VariableFont_wght.ttf */; };
-		E4E9B9A327032A4B00C30419 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E9B9A227032A4B00C30419 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,9 +37,9 @@
 		E45507382701E8E800E93039 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E4876FF3271808C3006BFE44 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		E4876FF527180B6A006BFE44 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		E4876FF727186200006BFE44 /* PostsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
 		E4DBA70E2703587000B70E99 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E4E9B9A0270321C100C30419 /* Gluten-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gluten-VariableFont_wght.ttf"; sourceTree = "<group>"; };
-		E4E9B9A227032A4B00C30419 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,9 +118,9 @@
 				E45507242701E62400E93039 /* AppDelegate.swift */,
 				E45507262701E62400E93039 /* SceneDelegate.swift */,
 				E45507282701E62400E93039 /* ViewController.swift */,
-				E4E9B9A227032A4B00C30419 /* RegisterViewController.swift */,
 				E4DBA70E2703587000B70E99 /* MainViewController.swift */,
 				E4876FF3271808C3006BFE44 /* PostsViewController.swift */,
+				E4876FF727186200006BFE44 /* PostsTableViewCell.swift */,
 				E4876FF527180B6A006BFE44 /* UploadViewController.swift */,
 			);
 			path = View;
@@ -263,8 +263,8 @@
 				E45507292701E62400E93039 /* ViewController.swift in Sources */,
 				E45507252701E62400E93039 /* AppDelegate.swift in Sources */,
 				E45507272701E62400E93039 /* SceneDelegate.swift in Sources */,
-				E4E9B9A327032A4B00C30419 /* RegisterViewController.swift in Sources */,
 				E4DBA70F2703587000B70E99 /* MainViewController.swift in Sources */,
+				E4876FF827186200006BFE44 /* PostsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

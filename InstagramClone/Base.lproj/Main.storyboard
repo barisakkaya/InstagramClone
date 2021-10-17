@@ -154,8 +154,85 @@
                     <view key="view" contentMode="scaleToFill" id="5KX-sm-rgk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zPM-2I-XFD">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="postCell" rowHeight="495" id="212-Fp-Hfd" customClass="PostsTableViewCell" customModule="InstagramClone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="495"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="212-Fp-Hfd" id="RRi-eb-6FO">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="495"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lazyiosdeveloper" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64m-cO-9Ym">
+                                                    <rect key="frame" x="8" y="28.5" width="128" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Istanbul, Turkey" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWs-HT-e6X">
+                                                    <rect key="frame" x="278" y="28.5" width="127" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <color key="textColor" systemColor="linkColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MEw-c9-Q8S">
+                                                    <rect key="frame" x="0.0" y="66" width="414" height="313"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.057174753609999997" green="0.068704470239999996" blue="0.067415094960000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="tintColor" systemColor="systemIndigoColor"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 Likes" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfF-Va-LOp">
+                                                    <rect key="frame" x="8" y="387" width="54" height="40.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gq8-Oe-HSc">
+                                                    <rect key="frame" x="340" y="387" width="65" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" systemColor="labelColor"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="hand.thumbsup" catalog="system">
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" weight="semibold"/>
+                                                    </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="likeClicked:" destination="212-Fp-Hfd" eventType="touchUpInside" id="wrj-4Y-rdH"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit." lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5p3-6w-Ibq">
+                                                    <rect key="frame" x="8" y="435" width="397" height="37"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commentLabel" destination="5p3-6w-Ibq" id="01D-hu-qya"/>
+                                            <outlet property="likeButton" destination="Gq8-Oe-HSc" id="cia-tk-axT"/>
+                                            <outlet property="likesLabel" destination="pfF-Va-LOp" id="nRJ-q6-eVH"/>
+                                            <outlet property="locationLabel" destination="WWs-HT-e6X" id="XvS-qD-rfN"/>
+                                            <outlet property="userImageView" destination="MEw-c9-Q8S" id="fLg-de-kf3"/>
+                                            <outlet property="usernameLabel" destination="64m-cO-9Ym" id="3Ph-yE-Byp"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="acB-Xw-RjW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zPM-2I-XFD" firstAttribute="top" secondItem="acB-Xw-RjW" secondAttribute="top" id="7bP-hy-Jvx"/>
+                            <constraint firstItem="zPM-2I-XFD" firstAttribute="leading" secondItem="acB-Xw-RjW" secondAttribute="leading" id="AnZ-85-Xgz"/>
+                            <constraint firstItem="zPM-2I-XFD" firstAttribute="bottom" secondItem="acB-Xw-RjW" secondAttribute="bottom" id="Azz-Vv-tP3"/>
+                            <constraint firstItem="zPM-2I-XFD" firstAttribute="centerX" secondItem="5KX-sm-rgk" secondAttribute="centerX" id="dwq-sf-sUR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Posts" id="J0Y-va-KLP">
                         <barButtonItem key="leftBarButtonItem" title="Logout" image="xmark.app.fill" catalog="system" id="2mq-oo-IQz">
@@ -166,6 +243,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="IHU-VF-bAu"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="zPM-2I-XFD" id="Ehz-wa-C8F"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToRoot" modalPresentationStyle="fullScreen" id="Z77-ER-Ly7"/>
                     </connections>
                 </viewController>
@@ -231,15 +309,25 @@
         </scene>
     </scenes>
     <resources>
+        <image name="hand.thumbsup" catalog="system" width="128" height="128"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="photo" catalog="system" width="128" height="93"/>
         <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
         <image name="xmark.app.fill" catalog="system" width="128" height="114"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

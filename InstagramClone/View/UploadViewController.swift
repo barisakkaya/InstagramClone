@@ -42,7 +42,32 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                         } else {
                             
                             if let imageUrl = url?.absoluteString {
-                                print(imageUrl)
+                                
+                                let db = Firestore.firestore()
+                                
+                                var ref: DocumentReference? = nil
+                                
+                                let fireStorePost = ["imageUrl" : imageUrl,
+                                                     "byWho" : Auth.auth().currentUser!.email!,
+                                                     "comment" : self.textField.text!,
+                                                     "time" : DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .medium),
+                                                     "likes" : 0
+                                ] as [String : Any]
+                                                                
+                                ref = db.collection("Posts").addDocument(data: fireStorePost, completion: { err in
+                                    if let err = err {
+                                        self.showErrorAlert(error: "Error!", message: err.localizedDescription)
+                                    } else {
+                                        self.imageView.image = UIImage(systemName: "photo")
+                                        self.textField.text = ""
+                                        self.view.endEditing(true)
+                                        self.imageView.backgroundColor = .systemGray4
+                                        self.tabBarController?.selectedIndex = 0
+                                        
+                                    }
+                                })
+                                
+                                
                             }
                         }
                     }

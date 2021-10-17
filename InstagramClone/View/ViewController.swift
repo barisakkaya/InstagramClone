@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
     

@@ -13,8 +13,6 @@ class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Main geldi")
-        // Do any additional setup after loading the view.
     }
     
 

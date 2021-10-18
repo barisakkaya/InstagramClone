@@ -18,7 +18,7 @@ class PostsTableViewCell: UITableViewCell {
     @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
     var id: String!
-    var like: Int!
+    var like = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,9 +35,9 @@ class PostsTableViewCell: UITableViewCell {
         
         like += 1
         
-        likesLabel.text = "\(like ?? 0) Likes"
+        likesLabel.text = "\(like) Likes"
         
-        let likes = ["likes": (like) ?? 0] as [String: Any]
+        let likes = ["likes": (like)] as [String: Any]
         
         fsDatabase.collection("Posts").document(id).setData(likes, merge: true)
         

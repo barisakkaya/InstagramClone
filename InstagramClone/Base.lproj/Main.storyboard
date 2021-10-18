@@ -129,7 +129,7 @@
                         <outlet property="imageView" destination="oAu-QC-LdO" id="OwD-Tg-1Wb"/>
                         <outlet property="textField" destination="zzD-ai-fiU" id="YDd-CC-TJg"/>
                         <outlet property="uploadButton" destination="pYf-mG-sw4" id="qXE-1C-4AD"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToRoot" id="y0R-1R-NES"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToRoot" modalPresentationStyle="fullScreen" id="y0R-1R-NES"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gyW-jN-hWe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -304,7 +304,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="GEh-FZ-VeU"/>
         <segue reference="0g8-1b-tgg"/>
-        <segue reference="Z77-ER-Ly7"/>
+        <segue reference="y0R-1R-NES"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>

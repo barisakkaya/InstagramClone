@@ -77,6 +77,7 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource {
         let like = data["likes"] as? Int
         if let like = like {
             cell.like = like
+            print(cell.like)
         }
         cell.commentLabel.text = data["comment"] as? String
         cell.userImageView.backgroundColor = .none

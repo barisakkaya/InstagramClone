@@ -19,7 +19,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="InstagramClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEh-cL-89N">
@@ -141,11 +141,12 @@
                         <outlet property="imageView" destination="oAu-QC-LdO" id="OwD-Tg-1Wb"/>
                         <outlet property="textField" destination="zzD-ai-fiU" id="YDd-CC-TJg"/>
                         <outlet property="uploadButton" destination="pYf-mG-sw4" id="qXE-1C-4AD"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToRoot" id="y0R-1R-NES"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gyW-jN-hWe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2626.0869565217395" y="438.61607142857139"/>
+            <point key="canvasLocation" x="2626" y="499"/>
         </scene>
         <!--Posts-->
         <scene sceneID="37c-Sc-pLf">
@@ -308,6 +309,9 @@
             <point key="canvasLocation" x="1715.9420289855075" y="438.61607142857139"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="y0R-1R-NES"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="hand.thumbsup" catalog="system" width="128" height="128"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>

@@ -7,14 +7,18 @@
 
 import UIKit
 import Firebase
+import Kingfisher
 
 class PostsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    var datas = [[String: Any]]()
+    var docID = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewDelegate()
+        getDatas()
         // Do any additional setup after loading the view.
     }
     
@@ -58,20 +62,38 @@ extension PostsViewController {
 extension PostsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        return datas.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let width = UIScreen.main.bounds.size.width
         let height = UIScreen.main.bounds.size.height
         var cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostsTableViewCell
+        let data = datas[indexPath.row]
         setLayout(cell: &cell, height: height, width: width)
-        cell.usernameLabel.text = "lazyiosdeveloper"
-        cell.likesLabel.text = "0 Likes"
-        cell.commentLabel.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a interdum dolor, id pharetra sapien. Etiam orci eros, sodales ac diam vitae, lobortis interdum metus. Sed tortor augue, ultrices sed elit quis, pellentesque feugiat arcu. "
+        
+        cell.usernameLabel.text = data["byWho"] as? String
+        cell.likesLabel.text = "\(data["likes"] as! Int) Likes"
+        let like = data["likes"] as? Int
+        if let like = like {
+            cell.like = like
+        }
+        cell.commentLabel.text = data["comment"] as? String
         cell.userImageView.backgroundColor = .none
-        cell.userImageView.image = UIImage(systemName: "photo")
-        cell.locationLabel.text = "Istanbul, Turkey"
+        let url = URL(string: data["imageUrl"] as? String ?? "")
+        KF.url(url)
+            .placeholder(.none)
+            .loadDiskFileSynchronously()
+            .cacheMemoryOnly()
+            .fade(duration: 0.25)
+            .onProgress { receivedSize, totalSize in  }
+            .onSuccess { result in  }
+            .onFailure { error in }
+            .set(to: cell.userImageView)
+        
+        cell.id = docID[indexPath.row]
+        print("location: \(data["locationName"] as? String)")
+        cell.locationLabel.text = data["locationName"] as? String
         cell.likeButton.setTitle("", for: .normal)
         
         return cell
@@ -93,7 +115,7 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.userImageView.snp.makeConstraints { make in
             make.width.equalTo(width)
             make.centerX.equalToSuperview()
-            make.top.equalTo(cell.locationLabel.snp_bottomMargin).offset(height * 0.03)
+            make.top.equalTo(cell.usernameLabel.snp_bottomMargin).offset(height * 0.03)
             make.height.equalTo(height * 0.4)
         }
         cell.likesLabel.snp.makeConstraints { make in
@@ -115,7 +137,25 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource {
             make.bottom.equalTo(height * -0.03)
         }
         
-        
+    }
+    
+    func getDatas() {
+        let firestoreDb = Firestore.firestore()
+        firestoreDb.collection("Posts").order(by: "time", descending: true).addSnapshotListener { snapshot, error in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                if let snapshot = snapshot {
+                    self.datas.removeAll()
+                    for doc in snapshot.documents {
+                        self.datas.append(["byWho":doc.get("byWho")!,"comment":doc.get("comment")!,"imageUrl":doc.get("imageUrl")!,"likes":doc.get("likes")!,"time":doc.get("time")!,"locationName":doc.get("locationName")!])
+                        self.docID.append(doc.documentID)
+                        
+                    }
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
     
 }

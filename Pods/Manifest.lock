@@ -333,6 +333,7 @@ PODS:
   - GTMSessionFetcher/Core (1.7.0)
   - Hero (1.6.1)
   - IQKeyboardManagerSwift (6.5.6)
+  - Kingfisher (6.3.1)
   - leveldb-library (1.22.1)
   - Material (3.1.8):
     - Material/Core (= 3.1.8)
@@ -357,6 +358,7 @@ DEPENDENCIES:
   - FirebaseFirestoreSwift
   - Hero
   - IQKeyboardManagerSwift
+  - Kingfisher
   - Material (~> 3.1.0)
   - SnapKit (~> 5.0.0)
 
@@ -381,6 +383,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - Hero
     - IQKeyboardManagerSwift
+    - Kingfisher
     - leveldb-library
     - Material
     - Motion
@@ -408,6 +411,7 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
   Hero: 215865ba3ae41dd9bb08cd6c60a645529c6fc94b
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   Material: a2a3f400a3b549d53ef89e56c58c4535b29db387
   Motion: cf1e060e489f6661126374d5c60dbd2ed991605c
@@ -415,6 +419,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 598ac5875634d347b58202ae6cee9418574d3885
+PODFILE CHECKSUM: 315f417a6da33a194485b2454ba1892806510f7c
 
 COCOAPODS: 1.11.2

@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 import Hero
 import Firebase
-import CoreMedia
 
 class ViewController: UIViewController {
     
@@ -22,10 +21,10 @@ class ViewController: UIViewController {
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setLayout()
-        
         
     }
     
@@ -56,11 +55,6 @@ class ViewController: UIViewController {
             callAlert(message: "Invalid email or password")
         }
     }
-    
-    
-    
-    
-    
     
 }
 extension ViewController {
@@ -125,4 +119,6 @@ extension ViewController {
         view.endEditing(true)
     }
 }
+
+
 

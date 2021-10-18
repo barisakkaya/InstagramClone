@@ -6,7 +6,8 @@
 //
 
 import UIKit
-import SnapKit
+import Firebase
+
 
 class PostsTableViewCell: UITableViewCell {
     
@@ -16,6 +17,8 @@ class PostsTableViewCell: UITableViewCell {
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
+    var id: String!
+    var like: Int!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,8 +31,17 @@ class PostsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func likeClicked(_ sender: UIButton) {
+        let fsDatabase = Firestore.firestore()
+        
+        like += 1
+        
+        likesLabel.text = "\(like ?? 0) Likes"
+        
+        let likes = ["likes": (like) ?? 0] as [String: Any]
+        
+        fsDatabase.collection("Posts").document(id).setData(likes, merge: true)
+        
     }
-    
     
 }
 

@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Firebase
+import CoreLocation
 
 class UploadViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -16,10 +17,17 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var imageView: UIImageView!
     var width: CGFloat!
     var height: CGFloat!
+    let locationManager = CLLocationManager()
+    let geoCoder = CLGeocoder()
+    var locationName: String!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setLayout()
-        
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
     }
     
     @IBAction func uploadClicked(_ sender: UIButton) {
@@ -51,9 +59,10 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                                                      "byWho" : Auth.auth().currentUser!.email!,
                                                      "comment" : self.textField.text!,
                                                      "time" : DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .medium),
-                                                     "likes" : 0
+                                                     "likes" : 0,
+                                                     "locationName" : self.locationName!
                                 ] as [String : Any]
-                                                                
+                                
                                 ref = db.collection("Posts").addDocument(data: fireStorePost, completion: { err in
                                     if let err = err {
                                         self.showErrorAlert(error: "Error!", message: err.localizedDescription)
@@ -93,6 +102,32 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
     }
+    
+}
+
+extension UploadViewController: CLLocationManagerDelegate {
+    func locationManager(
+        _ manager: CLLocationManager,
+        didUpdateLocations locations: [CLLocation]
+    ) {
+        if let location = locations.first {
+            geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, _) -> Void in
+                
+                placemarks?.forEach { (placemark) in
+                    
+                    if let city = placemark.locality, let country = placemark.country {
+                        
+                        self.locationName = "\(city), \(country)"
+                    }
+                }
+            })
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
+    
     
 }
 
@@ -146,4 +181,13 @@ extension UploadViewController {
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func setLocation() {
+        //        locationManager?.delegate = self
+        //        locationManager?.requestAlwaysAuthorization()
+        //        locationManager?.requestWhenInUseAuthorization()
+        //locationManager?.requestLocation() bir kere konum alır
+    }
 }
+
+

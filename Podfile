@@ -15,5 +15,6 @@ target 'InstagramClone' do
   pod 'Material', '~> 3.1.0'
   pod 'IQKeyboardManagerSwift'
   pod 'Hero'
+  pod 'Kingfisher'
   
 end

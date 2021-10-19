@@ -40,6 +40,7 @@ class PostsTableViewCell: UITableViewCell {
             likesLabel.text = "\(like) Likes"
             
             let likes = ["likes": (like)] as [String: Any]
+            
             fsDatabase.collection("Posts").document(id).setData(likes, merge: true)
         }
         

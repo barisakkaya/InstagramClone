@@ -17,7 +17,7 @@ class PostsTableViewCell: UITableViewCell {
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
-    var id: String!
+    var id: String = ""
     var like = 0
     
     override func awakeFromNib() {
@@ -33,13 +33,15 @@ class PostsTableViewCell: UITableViewCell {
     @IBAction func likeClicked(_ sender: UIButton) {
         let fsDatabase = Firestore.firestore()
         
-        like += 1
-        
-        likesLabel.text = "\(like) Likes"
-        
-        let likes = ["likes": (like)] as [String: Any]
-        
-        fsDatabase.collection("Posts").document(id).setData(likes, merge: true)
+        if id != "" {
+            
+            like += 1
+            
+            likesLabel.text = "\(like) Likes"
+            
+            let likes = ["likes": (like)] as [String: Any]
+            fsDatabase.collection("Posts").document(id).setData(likes, merge: true)
+        }
         
     }
     

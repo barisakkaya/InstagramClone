@@ -85,7 +85,7 @@
             <objects>
                 <viewController id="d5z-St-AJ1" customClass="UploadViewController" customModule="InstagramClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mVf-oV-RCO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oAu-QC-LdO">
@@ -303,7 +303,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="GEh-FZ-VeU"/>
-        <segue reference="0g8-1b-tgg"/>
+        <segue reference="IgH-vb-AxQ"/>
         <segue reference="y0R-1R-NES"/>
     </inferredMetricsTieBreakers>
     <resources>

@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import Hero
 import Firebase
 
 class ViewController: UIViewController {

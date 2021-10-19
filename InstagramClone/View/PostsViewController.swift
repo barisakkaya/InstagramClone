@@ -19,6 +19,7 @@ class PostsViewController: UIViewController {
         super.viewDidLoad()
         tableViewDelegate()
         getDatas()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -93,7 +94,6 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource {
             .set(to: cell.userImageView)
         
         cell.id = docID[indexPath.row]
-        print("location: \(data["locationName"] as? String)")
         cell.locationLabel.text = data["locationName"] as? String
         cell.likeButton.setTitle("", for: .normal)
         
@@ -157,6 +157,7 @@ extension PostsViewController: UITableViewDelegate, UITableViewDataSource {
                 }
             }
         }
+        
     }
     
 }
